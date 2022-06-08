@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/students/{id}(id=${student.getId()})}" th:object="${student}">
+    <label th:for="lastName">Last Name:</label>
+    <input th:id="lastName" th:type="text" th:field="*{lastName}">
+    <br>
+    <label th:for="firstName">First Name:</label>
+    <input th:id="firstName" th:type="text" th:field="*{firstName}">
+    <br>
+    <label th:for="patronymic">Patronymic:</label>
+    <input th:type="text" th:field="*{patronymic}">
+    <br>
+    <label th:for="birthdate">Birthdate:</label>
+    <input th:id="birthdate" type="date" th:field="*{birthdate}">
+    <br>
+    <label th:for="groupNumber">Group Number:</label>
+    <input th:id="groupNumber" th:type="text" th:field="*{groupNumber}">
+    <br>
+    <input type="submit" value="Update Student"/>
+</form>
+</body>
+</html>

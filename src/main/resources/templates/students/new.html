@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new Student</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/students}" th:object="${student}">
+    <label th:for="lastName">Last Name:</label>
+    <input th:name="lastName" th:id="lastName" th:type="text">
+    <br>
+    <label th:for="firstName">First Name:</label>
+    <input th:name="firstName" th:id="firstName" th:type="text">
+    <br>
+    <label th:for="patronymic">Patronymic:</label>
+    <input th:name="patronymic" th:id="patronymic" th:type="text">
+    <br>
+    <label th:for="birthdate">Birthdate:</label>
+    <input th:name="birthdate" th:id="birthdate" type="date">
+    <br>
+    <label th:for="groupNumber">Group Number:</label>
+    <input th:name="groupNumber" th:id="groupNumber" th:type="text">
+    <br>
+    <input type="submit" value="Push to add new Student">
+</form>
+</body>
+</html>

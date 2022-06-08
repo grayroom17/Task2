@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список всех студентов</title>
+</head>
+<body>
+<div th:each="student : ${students}">
+    <a th:text="${student.getId()}+' '+${student.getLastName()}+' '+${student.getFirstName()}+' '+${student.getPatronymic()}+' '+${#dates.format(student.getBirthdate(), 'yyyy-MM-dd')}+' '+${student.getGroupNumber()}"
+       th:href="@{/students/{id}(id = ${student.getId()})}">student</a>
+</div>
+<br>
+<hr>
+<a th:href="@{/students/new}">Create new student</a>
+</body>
+</html>
